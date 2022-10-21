@@ -1,0 +1,2 @@
+<h2>User input (not vulnerable) </h2>
+<%= @i %>

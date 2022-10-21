@@ -1,4 +1,21 @@
 https://github.com/nccgroup/sobelow
 
+mix sobelow --mark-skip-all
 mix sobelow --skip
 
+
+http://localhost:4000/json_resp_a?i=%3Cscript%3Ealert(1)%3C/script%3E&type=application/json
+http://localhost:4000/json_resp_a?i=%3Cscript%3Ealert(1)%3C/script%3E&type=application/json
+
+http://localhost:4000/json_resp_a?i=hello
+http://localhost:4000/json_resp_a?i=%3Cscript%3Ealert(1)%3C/script%3E
+
+XSS that sobelow will not pickup:
+
+  def html_resp_a(conn, %{"i" => i}) do
+    conn
+    |> put_resp_content_type("text/html")
+    |> resp(200, "#{i}")
+  end
+
+  

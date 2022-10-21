@@ -1,0 +1,8 @@
+<h2>File Upload</h2>
+<%= form_for @conn, Routes.page_path(@conn, :upload),
+                    [multipart: true], fn f -> %>
+
+    <%= file_input f, :upload, class: "form-control" %>
+    <%= submit "Upload", class: "btn btn-primary" %>
+
+<% end %>

@@ -15,7 +15,8 @@ defmodule Cross.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Cross.PubSub},
       # Start the Endpoint (http/https)
-      CrossWeb.Endpoint
+      CrossWeb.Endpoint,
+      Cross.ImgServer
       # Start a worker by calling: Cross.Worker.start_link(arg)
       # {Cross.Worker, arg}
     ]

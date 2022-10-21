@@ -18,6 +18,13 @@ defmodule CrossWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/render_a", PageController, :render_a
+    get "/render_b", PageController, :render_b
+    get "/html_resp", PageController, :html_resp
+    get "/send_resp_html", PageController, :send_resp_html
+    get "/new_upload", PageController, :new_upload
+    post "/upload", PageController, :upload
+    get "/view_photo/:filename", PageController, :view_photo
   end
 
   # Other scopes may use custom stacks.

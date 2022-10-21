@@ -1,0 +1,2 @@
+<h2>User input (vulnerable due to Phoenix.HTML.raw/1): </h2>
+<%= raw @i %>
